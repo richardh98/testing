@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fireTopLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000"
+    android:keepScreenOn="true"
+    android:orientation="vertical">
+
+    <com.webkul.mobikul.mlkitdemo.customviews.CameraSourcePreview
+        android:id="@+id/Preview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true">
+
+        <com.webkul.mobikul.mlkitdemo.customviews.GraphicOverlay
+            android:id="@+id/Overlay"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true" />
+    </com.webkul.mobikul.mlkitdemo.customviews.CameraSourcePreview>>
+
+    <RelativeLayout
+        android:id="@+id/control"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_toEndOf="@id/Preview"
+        android:layout_toRightOf="@id/Preview"
+        >
+
+        <TextView
+            android:id="@+id/resultsMessageTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:drawableTint="@android:color/white"
+            android:padding="6dp"
+            android:text="@string/results_found"
+            android:textColor="@android:color/white" />
+
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/resultsContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="bottom"
+        android:layout_above="@id/control"
+        >
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/results_spinner"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:listitem="@layout/camera_simple_spinner_item"
+            />
+    </LinearLayout>
+
+</RelativeLayout>
